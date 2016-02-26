@@ -1,11 +1,11 @@
 //use object literal syntax to create this
 var Forum = React.createClass({
 
-
 	getInitialState: function(){
 		//how do I get this data?
 		//well then flux might be the answer.
 		return{
+			//this will end up this.state.allAnswers =
 			allAnswers: {
 				"1":{
 					body:"Isn't that about time travel?",
@@ -23,12 +23,7 @@ var Forum = React.createClass({
 				},
 
 			}
-
-
-
-
 		}
-
 	},
 
 	render: function(){
@@ -36,8 +31,9 @@ var Forum = React.createClass({
 		//and is set when getInitialState is called.
 		//and can be updated with will cause a re-render.
 		//this data now gets passes to the component
-		return React.createElement('div', null,
-			React.createElement(ForumHeader,{ allAnswers: this.state.allAnswers})
-		);
-	}
+		return (
+			<div>
+				<ForumHeader allAnswers={ this.state.allAnswers } />
+			</div>
+		)
 });
