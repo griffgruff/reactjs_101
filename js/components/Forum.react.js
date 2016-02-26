@@ -27,13 +27,18 @@ var Forum = React.createClass({
 	},
 
 	render: function(){
-		//state is a property of all react componencts.
-		//and is set when getInitialState is called.
-		//and can be updated with will cause a re-render.
-		//this data now gets passes to the component
 		return (
 			<div>
-				<ForumHeader allAnswers={ this.state.allAnswers } />
+				<ForumHeader />
+				  <div className="container">
+						<ForumQuestion />
+						<hr />
+						<ForumAnswers allAnswers={ this.state.allAnswers } />
+						<hr />
+						<h4>Add an answer</h4>
+						<ForumAddAnswerBox />
+					</div>
 			</div>
-		)
+		);
+	}
 });
