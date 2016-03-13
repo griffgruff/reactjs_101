@@ -1,3 +1,11 @@
+var React = require('react')
+var ForumHeader = require('./ForumHeader.react')
+var ForumQuestion = require('./ForumQuestion.react')
+var ForumAnswers = require('./ForumAnswers.react')
+var ForumAddAnswerBox = require('./ForumAddAnswerBox.react')
+var ForumActions = require('../actions/ForumActions')
+var ForumStore = require('../stores/ForumStore')
+
 //use object literal syntax to create this
 var Forum = React.createClass({
 
@@ -25,6 +33,21 @@ var Forum = React.createClass({
 			}
 		}
 	},
+	componentDidMount: function(){
+		ForumStore.addChangeListener(this._onChange);
+	},
+	componentWillUnMount: function(){
+		ForumStore.removeListener(this._onChange);
+	},
+	_onChange: function(){
+		//ForumStore will broadcast all changes
+		//this is the method to perform the update
+		//only the store can call this method
+		this.setState({ allAnswers: ForumStore.getAnswers()})
+	},
+	_onAddAnswer: function(answerText, mything){
+		ForumActions.addNewAnswer(answerText);
+	},
 
 	render: function(){
 		return (
@@ -36,9 +59,9 @@ var Forum = React.createClass({
 						<ForumAnswers allAnswers={ this.state.allAnswers } />
 						<hr />
 						<h4>Add an answer</h4>
-						<ForumAddAnswerBox />
+						<ForumAddAnswerBox onAddAnswer={ this._onAddAnswer }/>
 					</div>
 			</div>
 		);
-	}
+   }
 });

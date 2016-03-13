@@ -6,9 +6,11 @@ var ForumQuestion = React.createClass({
         <h1>What is React and Flux?</h1>
         <p>
           I don't understand React or Flux. Can someone help me?
+          what
         </p>
       </div>
     );
-
   }
 });
+
+module.exports = ForumQuestion;

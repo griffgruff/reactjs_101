@@ -1,3 +1,6 @@
+
+var React = require('react')
+
 var ForumHeader = React.createClass({
 
 	render: function (){
@@ -8,11 +11,13 @@ var ForumHeader = React.createClass({
 								<div className="navebar-header">
 									<a className="navbar-brand" href="#">
 											React Forum
+
 									</a>
 								</div>
 							</div>
 						</nav>
 					);
 	 }
-
 });
+
+module.exports = ForumHeader;
