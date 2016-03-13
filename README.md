@@ -1,21 +1,26 @@
 # React example 101
 
-Working through some react example code.
+Working through some react code example code.
 
+# Getting started
 
-How to work with a backend api.
+>npm install
 
-How to build a full crud application with a backend api.
+# Using a module manager - Browserify
 
-How to pass validation errors back to the client.
+Using babel to
 
-  If the user turns off javascript then they are just going to get
-  a junk error message. Or some kind of simple list of errors to parse and
-  display.
+- compile from jsx to java-script
+- compile to es2015
 
-  The real validation needs to be on the client before sending to the server.
+Using Browserify to
 
+- Manage modules
 
-Is the event emitter a store?
+The biggest issue here is that it's so easy to make a mistake and not find it until run time.
 
-Store handles business logic?
+Forgetting to export or getting the path wrong somewhere.
+
+Can be difficult to debug.
+
+1. Export everything!!!

@@ -6,17 +6,20 @@
   "scripts": {
     "start": "watchify js/app.js -o lib/app.js",
     "build": "babel js -d lib --presets react",
-    "go": "browserify -t [ babelify --presets [ react ] ] js/app.js  -o lib/app.js"
+    "go": "browserify --debug -t [ babelify --presets [ react ] ] js/app.js  -o lib/app.js"
   },
   "author": "Anthony Griffiths",
   "license": "ISC",
   "devDependencies": {
+    "babel": "",
+    "babel-preset-es2015": "",
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "babel-preset-es2015": "",
     "babel-preset-react": "^6.5.0",
     "babelify": "^7.2.0",
     "flux": "^2.1.1",
@@ -24,7 +27,15 @@
     "react-dom": "^0.14.7"
   },
   "browserify": {
-    "transform": [ [ "babelify", { "presets": [ "react" ] } ]
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "react"
+          ]
+        }
+      ]
     ]
   }
 }

@@ -1,3 +1,6 @@
+var React = require('react')
+var ReactDom = require('react-dom');
+
 var ForumQuestion = React.createClass({
 
   render: function(){

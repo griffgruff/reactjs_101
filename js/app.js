@@ -1,25 +1,25 @@
 var React = require('react');
 var ReactDom = require('react-dom');
 var Forum = require('./components/Forum.react')
-var ForumDispatcher = require('./dispatcher/ForumDispatcher.react')
-
+var Head = require('./components/ForumHeader.react')
+var ForumDispatcher = require('./dispatcher/ForumDispatcher.js')
 
 ReactDOM.render(
 	React.createElement(Forum, null),
 	document.getElementById('forum')
 );
 
-var myemitter = new EventEmitter();
-
-myemitter.on('STARTED_THE_APP', function(){
-	console.log('started the app')
-});
-
-myemitter.on('STARTED_THE_APP', function(){
-	console.log('started the app #2')
-});
-
-myemitter.emit('STARTED_THE_APP')
+// var myemitter = new EventEmitter();
+//
+// myemitter.on('STARTED_THE_APP', function(){
+// 	console.log('started the app')
+// });
+//
+// myemitter.on('STARTED_THE_APP', function(){
+// 	console.log('started the app #2')
+// });
+//
+// myemitter.emit('STARTED_THE_APP')
 
 //register this function with the dispatcher
 ForumDispatcher.register(function(action){

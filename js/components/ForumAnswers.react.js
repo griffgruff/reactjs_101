@@ -1,5 +1,5 @@
-
 var React = require('react')
+var ReactDom = require('react-dom');
 var ForumAnswer = require('./ForumAnswer.react')
 var ForumActions = require('../actions/ForumActions')
 

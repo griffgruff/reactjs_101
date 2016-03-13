@@ -48,7 +48,6 @@ var Forum = React.createClass({
 	_onAddAnswer: function(answerText, mything){
 		ForumActions.addNewAnswer(answerText);
 	},
-
 	render: function(){
 		return (
 			<div>
@@ -65,3 +64,5 @@ var Forum = React.createClass({
 		);
    }
 });
+
+module.exports = Forum;
