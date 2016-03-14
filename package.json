@@ -4,7 +4,7 @@
   "description": "demo code",
   "main": "index.js",
   "scripts": {
-    "start": "watchify js/app.js -o lib/app.js",
+    "start": "watchify -v --debug -t [ babelify --presets [ react ] ] js/app.js  -o lib/app.js",
     "build": "babel js -d lib --presets react",
     "go": "browserify --debug -t [ babelify --presets [ react ] ] js/app.js  -o lib/app.js"
   },
@@ -26,16 +26,6 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "react"
-          ]
-        }
-      ]
-    ]
+  "browserify": { "transform": [ [ "babelify", { "presets": [ "react" ] } ] ]
   }
 }

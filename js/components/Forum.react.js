@@ -1,10 +1,12 @@
 var React = require('react')
+
 var ForumHeader = require('./ForumHeader.react')
 var ForumQuestion = require('./ForumQuestion.react')
 var ForumAnswers = require('./ForumAnswers.react')
 var ForumAddAnswerBox = require('./ForumAddAnswerBox.react')
 var ForumActions = require('../actions/ForumActions')
 var ForumStore = require('../stores/ForumStore')
+var SimpleForm = require('./SimpleForm.react')
 
 //use object literal syntax to create this
 var Forum = React.createClass({
@@ -60,9 +62,13 @@ var Forum = React.createClass({
 						<h4>Add an answer</h4>
 						<ForumAddAnswerBox onAddAnswer={ this._onAddAnswer }/>
 					</div>
+
+				<SimpleForm />
 			</div>
 		);
    }
 });
 
+
+//if this is a module then make sure you export it.
 module.exports = Forum;
