@@ -1,4 +1,4 @@
-# React example 101
+# React example 101 - January 2016
 
 Working through some react code example code.
 
