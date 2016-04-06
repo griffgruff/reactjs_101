@@ -2,6 +2,8 @@
 
 Working through some react code example code.
 
+Trying to make a git confilit
+
 # Getting started
 
 First install the node packages with:
